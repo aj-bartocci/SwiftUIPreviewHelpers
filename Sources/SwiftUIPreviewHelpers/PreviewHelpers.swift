@@ -1,9 +1,9 @@
 #if DEBUG
 import SwiftUI
 
-public struct SwiftUIPreviewHelpers { }
+public struct PreviewHelpers { }
 
-public extension SwiftUIPreviewHelpers {
+public extension PreviewHelpers {
     enum Device: String {
         // iPhone
         case iPhone5s = "iPhone 5s"

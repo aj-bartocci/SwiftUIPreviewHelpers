@@ -14,7 +14,7 @@ public extension View {
         .previewLayout(.sizeThatFits)
     }
     
-    func previewDevice(_ device: SwiftUIPreviewHelpers.Device) -> some View {
+    func previewDevice(_ device: PreviewHelpers.Device) -> some View {
         return self
         .previewDevice(PreviewDevice(rawValue: device.rawValue))
     }
