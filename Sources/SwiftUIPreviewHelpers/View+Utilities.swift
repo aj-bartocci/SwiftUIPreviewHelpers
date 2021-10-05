@@ -23,5 +23,17 @@ public extension View {
         return self.preferredColorScheme(.dark)
         .background(Color(UIColor.systemBackground))
     }
+    
+    // MARK: Accessibility
+    func previewWithSizeCategory(_ size: ContentSizeCategory) -> some View {
+        return self
+        .environment(\.sizeCategory, size)
+    }
+    
+    func previewWithBoldText() -> some View {
+        return self
+        .environment(\.legibilityWeight, .bold)
+    }
+
 }
 #endif
