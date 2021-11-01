@@ -43,12 +43,17 @@ public struct UIViewControllerPreview: UIViewControllerRepresentable {
         // no-op
     }
     
+    /// Wraps the preview in a SwiftUI NavigationView
     public func previewInNavigationView(displayMode: NavigationBarItem.TitleDisplayMode = .automatic) -> some View {
-        self.viewController.loadViewIfNeeded()
-        let title = self.viewController.title ?? ""
         return NavigationView {
-            self.navigationTitle(title)
-                .navigationBarTitleDisplayMode(displayMode)
+            self.navigationBarTitleDisplayMode(displayMode)
+        }
+    }
+    
+    /// Wraps the preview in a UIKit UINavigationViewController
+    public func previewInNavigationViewController() -> some View {
+        return UIViewControllerPreview {
+            return UINavigationController(rootViewController: viewController)
         }
     }
 }
