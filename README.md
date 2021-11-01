@@ -4,6 +4,8 @@ This package contains helper structs and functions that make working with SwiftU
 
 The package itself puts all code inside of the DEBUG macro, so that the code will not ship with release builds of your app. This means when using the library you should wrap your code in the DEBUG macro as well. This helps make sure you are not shipping preview related code with your applications. 
 
+When [SE-0273](https://github.com/apple/swift-evolution/blob/master/proposals/0273-swiftpm-conditional-target-dependencies.md) is fully implemented you should be able to specify this package as a debug dependency as well, so that it will only be packaged for debug builds.
+
 # Project Requirements 
 - Swift 5+
 - iOS 10+
@@ -103,8 +105,20 @@ UIViewPreview(for: TestView())
   .previewInDarkMode()
 ```
 
+## PreviewInNavigationViewController (UIViewControllerPreview only)
+Using previewInNavigationViewController is useful for embedding a UIViewController inside of a UIKit navigation view controller. This is mostly handy when you don't care about using a custom navigation controller. If you are using a custom navigation controller it is better to set it up in the UIViewControllerPreview initializer like the exmaple above. 
+
+```swift
+func previewInNavigationViewController() -> some View
+
+----------
+
+UIViewControllerPreview(for: ViewController())
+  .previewInNavigationViewController()
+```
+
 ## PreviewInNavigationView (UIViewControllerPreview only)
-Using previewInNavigationView is useful for embedding a UIViewController inside of a navigation view. This is mostly handy when you don't care about using a custom navigation controller. If you are using a custom navigation controller it is better to set it up in the UIViewControllerPreview initializer like the exmaple above. 
+Using previewInNavigationView is useful for embedding a UIViewController inside of a SwiftUI navigation view. This is mostly handy when you don't care about using a custom navigation controller. If you are using a custom navigation controller it is better to set it up in the UIViewControllerPreview initializer like the exmaple above. 
 
 ```swift
 func previewInNavigationView(displayMode: NavigationBarItem.TitleDisplayMode = .automatic) -> some View
