@@ -1,4 +1,3 @@
-#if DEBUG
 import SwiftUI
 
 @available(iOS 14.0, *)
@@ -36,4 +35,3 @@ public extension View {
     }
 
 }
-#endif

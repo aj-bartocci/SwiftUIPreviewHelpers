@@ -1,4 +1,3 @@
-#if DEBUG
 import SwiftUI
 
 @available(iOS 14.0, *)
@@ -40,4 +39,3 @@ public struct UIViewPreview: UIViewRepresentable {
         // no-op
     }
 }
-#endif

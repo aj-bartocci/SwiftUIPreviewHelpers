@@ -1,4 +1,3 @@
-#if DEBUG
 import SwiftUI
 
 @available(iOS 14.0, *)
@@ -57,4 +56,3 @@ public struct UIViewControllerPreview: UIViewControllerRepresentable {
         }
     }
 }
-#endif

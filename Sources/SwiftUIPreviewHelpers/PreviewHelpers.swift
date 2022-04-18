@@ -1,4 +1,3 @@
-#if DEBUG
 import SwiftUI
 
 public struct PreviewHelpers { }
@@ -46,5 +45,3 @@ public extension PreviewHelpers {
         case iPadMini = "iPad mini (6th generation)"
     }
 }
-
-#endif

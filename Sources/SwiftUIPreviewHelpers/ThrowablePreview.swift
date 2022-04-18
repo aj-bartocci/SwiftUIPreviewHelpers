@@ -1,4 +1,3 @@
-#if DEBUG
 import SwiftUI
 
 @available(iOS 14.0, *)
@@ -22,5 +21,3 @@ public struct ThrowablePreview<Content: View>: View {
         view
     }
 }
-
-#endif
