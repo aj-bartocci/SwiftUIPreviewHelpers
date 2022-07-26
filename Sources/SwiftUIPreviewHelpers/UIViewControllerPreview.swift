@@ -44,7 +44,7 @@ public struct UIViewControllerPreview: UIViewControllerRepresentable {
     }
     
     /// Wraps the preview in a SwiftUI NavigationView
-    public func previewInNavigationView(displayMode: NavigationBarItem.TitleDisplayMode = .automatic) -> some View {
+    public func previewInNavigationView(displayMode: NavigationBarItem.TitleDisplayMode) -> some View {
         return NavigationView {
             self.navigationBarTitleDisplayMode(displayMode)
         }
