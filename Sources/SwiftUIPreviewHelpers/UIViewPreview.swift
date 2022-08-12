@@ -113,6 +113,10 @@ public struct UIViewPreview: View {
         self.build = createView
     }
     
+    public init(for view: UIView) {
+        self.init(for: { return view })
+    }
+    
     public var body: some View {
         UIViewBridge(build: build)
     }
