@@ -16,11 +16,18 @@ Even though SwiftUI is iOS 13+ you can still benefit from SwiftUI previews in ap
 
 If your codebase already targets iOS 14+ then you do not need to worry about using @available(iOS 14, *) for your previews. 
 
-# Helpers
+# UIKit Helpers
 
-The UIKit preview helpers follow the same general format. Each preview helper has 2 initializers, one initializer being a throwing closure that returns the UIKit element and the other taking a concreate instance of the UIKit element. 
+The UIKit preview helpers follow the same general format as the SwiftUI preview helpers. Each preview helper has 2 initializers, one initializer being a throwing closure that returns the UIKit element and the other taking a concreate instance of the UIKit element. 
 
 The closure based initializers can be useful for throwing errors from mock data, configuring the elements in specific ways, or for embedding the elements inside of container views / view controllers.
+
+The UIKit helpers use autolayout by default to pin to the superview edges, but you can call `previewWithoutAutolayout` on the `UIViewPreview` if your rendered view does not want to use autolayout.
+
+UIViewPreviews will render content in the vertical center of the preview, but this can be changed to render from the top by calling `previewPosition(.top)`.
+
+# Tips
+When actively developing and looking at a UIKit view based preview the constraints may not update in real time. There seems to be a limitation of using UIKit in SwiftUI previews, in that simply saving the file will not trigger constraints and other UIKit elements to update. A workaround is to build the project, which seems to make the previews update accordingly. 
 
 ## UIViewControllerPreview
 UIViewControllerPreview is a wrapper of UIViewControllerRepresentable that makes it easy to render UIViewControllers.
