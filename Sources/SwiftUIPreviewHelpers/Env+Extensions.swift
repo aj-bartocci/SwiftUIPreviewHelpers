@@ -1,4 +1,4 @@
-#if DEBUG
+#if DEBUG || ALLOW_PREVIEW_HELPER_RELEASE
 
 import SwiftUI
 
