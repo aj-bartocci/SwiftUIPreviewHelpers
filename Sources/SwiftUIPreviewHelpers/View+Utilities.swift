@@ -24,6 +24,11 @@ public extension View {
         .background(Color(UIColor.systemBackground))
     }
     
+    func previewInLightMode() -> some View {
+        return self.preferredColorScheme(.light)
+        .background(Color(UIColor.systemBackground))
+    }
+    
     // MARK: Accessibility
     func previewWithSizeCategory(_ size: ContentSizeCategory) -> some View {
         return self
